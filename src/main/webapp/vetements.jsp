@@ -24,7 +24,7 @@
       </form>     
       <table class="table table-striped">
         <tr>
-          <th>ID</th><th>Nom Vetement</th><th>Prix</th><th>Suppression<th>Edition</th>
+          <th>ID</th><th>Nom Vetement</th><th>Prix</th><th>Suppression<th>Edition</th><th>Marque</th>
          </tr>
          <c:forEach items="${model.vetements}" var="p">
            <tr>
@@ -32,7 +32,8 @@
               <td>${p.nomVetement }</td>
               <td>${p.prix }</td>
               <td><a onclick="return confirm('Etes-vous sûr ?')" href="supprimer.do?id=${p.idVetement }">Supprimer</a></td>
-               <td><a href="editer.do?id=${p.idVetement }">Edit</a></td>
+              <td><a href="editer.do?id=${p.idVetement }">Edit</a></td>
+              <td>${p.marque.nomCat }</td>
            </tr>
          </c:forEach>        
       </table>
